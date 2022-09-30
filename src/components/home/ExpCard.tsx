@@ -1,6 +1,6 @@
 
 export type ExpCardProps = {
-    svg: string;
+    svg: any;
     name: string;
 
 }

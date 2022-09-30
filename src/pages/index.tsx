@@ -20,6 +20,7 @@ import { custom } from "zod";
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { ExpCard } from "../components/home/ExpCard";
 import { ExpCards } from "../components/home/ExpCards";
+import { AssetProjects } from "../components/home/AssetProjects";
 
 
 const Home: NextPage = () => {
@@ -28,9 +29,9 @@ const Home: NextPage = () => {
   const [readyProjects, setReadyProjects] = useState(false)
   const [readyContact, setReadyContact] = useState(false)
 
-  let navbar = ['About', 'Experience', 'Projects', 'Contact']
+  const navbar: Array<string> = ['About', 'Experience', 'Projects', 'Contact'] 
 
-
+  console.log(readyProjects)
 
   const {text} = useTypewriter({
     words:[
@@ -48,7 +49,7 @@ const Home: NextPage = () => {
   const pagination = {
     clickable: true,
     type: 'bullets',
-    renderBullet: function (index, className, menu) {
+    renderBullet: function (index:number, className:string) {
       return '<span class="mniejszyekran:invisible font-bold ' + className + '  ">' + (navbar[index]) + "</span>";
       // return '<span class="' + className + '">' + (index + 1) + "</span>";
        //https://codepen.io/ncer/pen/xpqemZ sie to przytda
@@ -128,7 +129,7 @@ const Home: NextPage = () => {
             <div className={`${readyExp ? 'flex flex-col justify-center items-center animate-show-up' : 'hidden'}`}>
               <h1 className="text-[3.1rem] font-bold text-[#a4b8d5] ">I have Experience with:</h1>
               <div className="flex">
-                <ExpCards/>
+                <ExpCards readyProjects={readyProjects}/>
               </div>
 
             </div>
@@ -136,9 +137,12 @@ const Home: NextPage = () => {
       </SwiperSlide>
       <SwiperSlide>
           <div id='dupa' className="flex flex-col justify-center items-center text-body-color bg-card-bg snap-center h-[100vh] w-[100wh]  bg-[#3a5a88]">
-          <div className={`${readyProjects ? 'flex justify-center items-center animate-show-up h-96 w-96 text-white bg-black' : 'hidden'}`}>
-              Siema
+          <div className={`${readyProjects ? 'flex flex-col justify-center items-center animate-show-up' : 'hidden'}`}>
+            <h1 className="text-[3.1rem] font-bold text-[#a4b8d5] ">My projects:</h1>
+            <div className="flex">
+              <AssetProjects/>
             </div>
+          </div>
           </div>
       </SwiperSlide>
       <SwiperSlide>
