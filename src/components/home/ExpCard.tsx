@@ -11,7 +11,7 @@ export const ExpCard = (props: ExpCardProps) =>{
 
 
     return(
-        <div className="flex flex-col  items-center rounded-xl bg-[#a4b8d5]">
+        <div className="flex flex-col  items-center rounded-xl bg-[#a4b8d5] hover:scale-125 duration-200 group">
             <div className="m-5">
                 {props.svg}
             </div>

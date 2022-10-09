@@ -28,10 +28,9 @@ const Home: NextPage = () => {
   const [readyExp, setReadyExp] = useState(false)
   const [readyProjects, setReadyProjects] = useState(false)
   const [readyContact, setReadyContact] = useState(false)
-
   const navbar: Array<string> = ['About', 'Experience', 'Projects', 'Contact'] 
 
-  console.log(readyProjects)
+  // console.log(readyProjects)
 
   const {text} = useTypewriter({
     words:[
@@ -58,6 +57,7 @@ const Home: NextPage = () => {
     },
   };
 
+  // console.log(window.innerHeight)
   
   return (
     <>
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
           direction={"vertical"}
           // spaceBetween={-63}
           slidesPerView={1}
-          // height = {1000}
+          // height = {200}
           // onSlideChange={() => console.log('slide change')}
           // loop={true}
           onSlideChange={(swiper) => {
@@ -95,7 +95,7 @@ const Home: NextPage = () => {
                   <div className="">
                     
       <SwiperSlide>
-          <div  className="flex flex-col justify-center items-center text-body-color bg-card-bg snap-center h-[100vh] w-[100wh]  bg-[#37517e]">
+          <div  className="flex flex-col justify-center items-center text-body-color bg-card-bg h-[100vh] w-[100wh]  bg-[#3a5a88]">
             <div className="flex flex-row animate-show-up">
               <div className="w-96 h-96 ">
                 <Image src={Chatting} alt="xdd" />
@@ -127,7 +127,7 @@ const Home: NextPage = () => {
       <SwiperSlide>
           <div className="flex flex-col justify-center items-center text-body-color bg-card-bg snap-center h-[100vh] w-[100wh]  bg-[#4971aa]">
             <div className={`${readyExp ? 'flex flex-col justify-center items-center animate-show-up' : 'hidden'}`}>
-              <h1 className="text-[3.1rem] font-bold text-[#a4b8d5] ">I have Experience with:</h1>
+              <h1 className="text-[3.1rem] font-bold text-[#a4b8d5] ">I have Experience in:</h1>
               <div className="flex">
                 <ExpCards readyProjects={readyProjects}/>
               </div>
@@ -137,8 +137,12 @@ const Home: NextPage = () => {
       </SwiperSlide>
       <SwiperSlide>
           <div id='dupa' className="flex flex-col justify-center items-center text-body-color bg-card-bg snap-center h-[100vh] w-[100wh]  bg-[#3a5a88]">
-          <div className={`${readyProjects ? 'flex flex-col justify-center items-center animate-show-up' : 'hidden'}`}>
-            <h1 className="text-[3.1rem] font-bold text-[#a4b8d5] ">My projects:</h1>
+          <div className="flex  items-center justify-center">
+            <h1 className="absolute/ mt-auto/ mb-auto` -left-36` text-[3.1rem] font-bold text-[#a4b8d5]  w-96/ -rotate-90` break-normal ">My projects:</h1>
+
+          </div>
+
+          <div className={`${readyProjects ? 'flex justify-center items-center animate-show-up' : 'hidden'}`}>
             <div className="flex">
               <AssetProjects/>
             </div>
