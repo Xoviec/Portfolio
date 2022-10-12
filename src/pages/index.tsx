@@ -21,6 +21,8 @@ import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { ExpCard } from "../components/home/ExpCard";
 import { ExpCards } from "../components/home/ExpCards";
 import { AssetProjects } from "../components/home/AssetProjects";
+import { Contact } from "../components/home/contact";
+import { AssetProgressBar } from "../components/home/AssetProgressBar";
 
 
 const Home: NextPage = () => {
@@ -58,7 +60,9 @@ const Home: NextPage = () => {
   };
 
   // console.log(window.innerHeight)
-  
+  const [progress, setProgress] = useState(0)
+
+
   return (
     <>
       <Navbar></Navbar>
@@ -83,7 +87,6 @@ const Home: NextPage = () => {
           custom={custom}
           modules={[Pagination, Mousewheel]}
           mousewheel={true}
-          navigation={true}
           normalizeSlideIndex={true}
           allowTouchMove={false}
           // modules={[Mousewheel]}
@@ -151,8 +154,9 @@ const Home: NextPage = () => {
       </SwiperSlide>
       <SwiperSlide>
           <div className="flex flex-col justify-center items-center text-body-color bg-card-bg snap-center h-[100vh] w-[100wh]  bg-[#5b7fb3]">
-          <div className={`${readyContact ? 'flex justify-center items-center animate-show-up h-96 w-96 text-white bg-black' : 'hidden'}`}>
-              Dupa
+          <div className={`${readyContact ? 'flex flex-col justify-center items-center animate-show-up' : 'hidden'}`}>
+              <Contact setProgress={setProgress} progress={progress}></Contact>
+              {/* <AssetProgressBar progress={progress}></AssetProgressBar> */}
             </div>
           </div>
       </SwiperSlide>

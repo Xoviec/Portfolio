@@ -21,9 +21,12 @@ const reactIcon = <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBo
 export const AssetProject = (props: ProjectProps) =>{
 
     return(
-        <div className="flex bg-gradient-to-b from-[#91b8fa] to-[#4d8af3] flex-col justify-between items-center w-[300px] rounded-xl overflow-hidden hover:scale-105 duration-150 ">
+        <div className="flex bg-gradient-to-b from-[#91b8fa] to-[#4d8af3]  flex-col justify-between items-center w-[300px] rounded-xl overflow-hidden hover:scale-105 duration-150 ">
             <div className=' w-96 rounded-t-xl hover:bg-opacity-25 group '>
-                <Image src={Facebook} className=' rounded-t-xl group-hover:blur-sm/ duration-[300ms] backdrop-blur-lg'></Image>
+                <Image src={Facebook} className=' rounded-t-xl group-hover:blur-sm/ duration-[300ms]   opacity-100'></Image>
+                {/* <div>
+                <div ><iframe src="https://streamable.com/e/uzgdkz"  width="100%" height="100%" ></iframe></div>
+                </div> */}
                 {/* <div className='absolute -translate-y-28 opacity-0 translate-x-[153px] w-20 text-center   group-hover:opacity-100 hover:duration-200 duration-200 '>
                     <button className='ml-auto mr-auto p-2 text-sm font-bold bg-gradient-to-b from-[#91b8fa] to-[#4d8af3] rounded-xl text-[#37517e] text-center'>
                         Github
