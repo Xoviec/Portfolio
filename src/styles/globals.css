@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+.swiper-container {
+	width: 480px;
+  }
+  @media screen and (min-width: 300px) {
+	.swiper-container {
+	  width: 300px;
+	}
+  }
+
+  @media screen and (min-width: 800px) {
+	.swiper-container {
+	  width: 800px;
+	}
+  }
+  
+  @media screen and (min-width: 1146px) {
+	.swiper-container {
+	  width: 1146px;
+	}
+  }
 
 .swiper-container {
 	width: 100%;

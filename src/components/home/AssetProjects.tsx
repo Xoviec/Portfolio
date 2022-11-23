@@ -28,8 +28,26 @@ export const AssetProjects = () =>{
     return(
 
         <Swiper
+
+        breakpoints={{
+            // when window width is >= 640px
+            300: {
+                width: 300,
+                slidesPerView: 1,
+              },
+            800: {
+              width: 800,
+              slidesPerView: 2,
+            },
+            // when window width is >= 768px
+            1146: {
+              width: 1146,
+              slidesPerView: 3,
+            },
+          }}
+
         spaceBetween={10}
-        slidesPerView={3}
+        // ebeslidesPerView={3}
         modules={[Autoplay, Navigation]}
         freeMode={true}
         autoplay={{

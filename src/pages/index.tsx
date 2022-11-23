@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import { Navbar } from "../components/home/Navbar";
 import React, { useRef, useState } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper";
 import Image from 'next/image'
 import Chatting from '../images/chatting.png'
@@ -25,11 +24,17 @@ import { Contact } from "../components/home/contact";
 import { AssetProgressBar } from "../components/home/AssetProgressBar";
 
 
+
 const Home: NextPage = () => {
 
-  const [readyExp, setReadyExp] = useState(false)
-  const [readyProjects, setReadyProjects] = useState(false)
-  const [readyContact, setReadyContact] = useState(false)
+  let [output, setOutput] = useState('')
+
+
+  // console.log(output)
+
+  const [readyExp, setReadyExp] = useState(true)
+  const [readyProjects, setReadyProjects] = useState(true)
+  const [readyContact, setReadyContact] = useState(true)
   const navbar: Array<string> = ['About', 'Experience', 'Projects', 'Contact'] 
 
   // console.log(readyProjects)
@@ -68,50 +73,23 @@ const Home: NextPage = () => {
       <Navbar></Navbar>
       <div className="bg-[#a4b8d5] z-10">
         
-      <Swiper
-          direction={"vertical"}
-          // spaceBetween={-63}
-          slidesPerView={1}
-          // height = {200}
-          // onSlideChange={() => console.log('slide change')}
-          // loop={true}
-          onSlideChange={(swiper) => {
-            swiper.activeIndex == 1 ? setReadyExp(true) : 
-            swiper.activeIndex == 2 ? setReadyProjects(true) : 
-            swiper.activeIndex == 3 ? setReadyContact(true) :  null
-              
-            
-          }}
-          // onSwiper={(swiper) => console.log(swiper.activeIndex)}
-          pagination={pagination}
-          custom={custom}
-          modules={[Pagination, Mousewheel]}
-          mousewheel={true}
-          normalizeSlideIndex={true}
-          allowTouchMove={false}
-          // modules={[Mousewheel]}
-          speed={1000}
-          className={'h-[100vh] z-10'}
-          // onSwiper={(swiper) => setIsActive('none')}
 
-      > 
                   <div className="">
                     
-      <SwiperSlide>
           <div  className="flex flex-col justify-center items-center text-body-color bg-card-bg h-[100vh] w-[100wh]  bg-[#3a5a88]">
-            <div className="flex flex-row animate-show-up">
+            <div className="flex flex-row lg:flex-col animate-show-up">
               <div className="w-96 h-96 ">
                 <Image src={Chatting} alt="xdd" />
               </div>
-              <div className="w-96 h-96  flex flex-col justify-center items-start">
-                <h1 className="text-[3.1rem] font-bold text-[#a4b8d5]  ">Adrian Gąsiorek </h1>
-                <h2 className="text-4xl w-96 font-semibold text-[#92aacc]">{text} <Cursor cursorStyle='_'/> </h2>
+              <div className="w-96   flex flex-col justify-center items-start lg:justify-start sm:items-center">
+                <h1 className="text-[3.1rem] font-bold text-[#a4b8d5] sm:text-[2.7rem] sm:text-center ">Adrian Gąsiorek </h1>
+                <h2 className="text-4xl w-96 font-semibold text-[#92aacc] sm:text-center">{text} <Cursor cursorStyle='_'/> </h2>
                 
-                <h3 className="text-[#8f9db3]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium vitae lorem condimentum sagittis. </h3>
+                <h3 className="text-[#8f9db3] lg:text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium vitae lorem condimentum sagittis. </h3>
                 
               </div>
             </div>
-            <div className="flex justify-between w-44 mt-10 animate-show-up">
+            <div className="flex justify-between w-44 mt-10 mt:mt-0 animate-show-up">
               <div className=" border-b-4 border-transparent hover:border-[#92aacc] duration-700 ">
                 <svg fill="#a4b8d5" xmlns="http://www.w3.org/2000/svg" className="hover:fill-[#92aacc]" viewBox="0 0 50 50" width="50px" height="50px"><path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"/></svg>
               </div>
@@ -126,19 +104,15 @@ const Home: NextPage = () => {
 
 
           </div>
-      </SwiperSlide>
-      <SwiperSlide>
           <div className="flex flex-col justify-center items-center text-body-color bg-card-bg snap-center h-[100vh] w-[100wh]  bg-[#4971aa]">
             <div className={`${readyExp ? 'flex flex-col justify-center items-center animate-show-up' : 'hidden'}`}>
-              <h1 className="text-[3.1rem] font-bold text-[#a4b8d5] ">I have Experience in:</h1>
+              <h1 className="text-[3.1rem] font-bold text-[#a4b8d5]  sm:text-[1.3rem]">I have Experience in: {output[3]}</h1>
               <div className="flex">
                 <ExpCards readyProjects={readyProjects}/>
               </div>
 
             </div>
           </div>
-      </SwiperSlide>
-      <SwiperSlide>
           <div id='dupa' className="flex flex-col justify-center items-center text-body-color bg-card-bg snap-center h-[100vh] w-[100wh]  bg-[#3a5a88]">
           <div className="flex  items-center justify-center">
             <h1 className="absolute/ mt-auto/ mb-auto` -left-36` text-[3.1rem] font-bold text-[#a4b8d5]  w-96/ -rotate-90` break-normal ">My projects:</h1>
@@ -151,18 +125,24 @@ const Home: NextPage = () => {
             </div>
           </div>
           </div>
-      </SwiperSlide>
-      <SwiperSlide>
           <div className="flex flex-col justify-center items-center text-body-color bg-card-bg snap-center h-[100vh] w-[100wh]  bg-[#5b7fb3]">
           <div className={`${readyContact ? 'flex flex-col justify-center items-center animate-show-up' : 'hidden'}`}>
               <Contact setProgress={setProgress} progress={progress}></Contact>
               {/* <AssetProgressBar progress={progress}></AssetProgressBar> */}
             </div>
           </div>
-      </SwiperSlide>
+        <div className="bg-blue-400 w-96 h-96 flex flex-col rounded-3xl overflow-hidden m-10">
+          <div className="bg-green-400 w-[100%] h-[50%] rounded-bl-3xl"></div>
+          <div className="bg-green-400 w-[100%] h-[50%] ">
+          <div className="relative bg-blue-400 w-[100%] h-[100%] rounded-tr-3xl"></div>
+
+          </div>
+
+
+
+        </div>
      
       </div>
-      </Swiper>
 
       </div>
 
