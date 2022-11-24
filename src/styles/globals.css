@@ -5,6 +5,9 @@
 .swiper-container {
 	width: 480px;
   }
+.navbar{
+	z-index: 99999;
+}
   @media screen and (min-width: 300px) {
 	.swiper-container {
 	  width: 300px;

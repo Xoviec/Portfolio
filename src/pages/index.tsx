@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { Navbar } from "../components/home/Navbar";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 // Import Swiper React components
 import { Mousewheel, Pagination } from "swiper";
 import Image from 'next/image'
@@ -36,6 +36,40 @@ const Home: NextPage = () => {
   const [readyProjects, setReadyProjects] = useState(true)
   const [readyContact, setReadyContact] = useState(true)
   const navbar: Array<string> = ['About', 'Experience', 'Projects', 'Contact'] 
+  const [active, setActive] = useState('About')
+  const controlNavbar = () =>{
+    //przerobic
+    if(window.scrollY<444){
+      setActive('about')
+    }
+    if((window.scrollY>444)&&(window.scrollY<1320)){
+      setActive('exp')
+    }
+    if((window.scrollY>1320)&&(window.scrollY<2680)){
+      setActive('projects')
+    }
+    if(window.scrollY>2680){
+      setActive('contact')
+
+    }
+
+}
+  // onscroll={controlNavbar}
+
+
+
+  useEffect(() => {
+    const onScroll = e => {
+      controlNavbar();
+      // console.log(window.scrollY)
+
+    };
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [setActive]);
+
+
 
   // console.log(readyProjects)
 
@@ -69,8 +103,8 @@ const Home: NextPage = () => {
 
 
   return (
-    <>
-      <Navbar></Navbar>
+    < >
+      <Navbar active={active}></Navbar>
       <div className="bg-[#a4b8d5] z-10">
         
 
@@ -113,9 +147,9 @@ const Home: NextPage = () => {
 
             </div>
           </div>
-          <div id='dupa' className="flex flex-col justify-center items-center text-body-color bg-card-bg snap-center h-[100vh] w-[100wh]  bg-[#3a5a88]">
+          <div id='dupa' className="flex flex-col justify-center items-center text-body-color bg-card-bg snap-center h-[100vh]. w-[100wh]  bg-[#3a5a88]">
           <div className="flex  items-center justify-center">
-            <h1 className="absolute/ mt-auto/ mb-auto` -left-36` text-[3.1rem] font-bold text-[#a4b8d5]  w-96/ -rotate-90` break-normal ">My projects:</h1>
+            <h1 className="absolute/ mt-auto/ mb-auto` -left-36` text-[3.1rem] font-bold text-[#a4b8d5]  w-96/ -rotate-90` break-normal ">Projects:</h1>
 
           </div>
 

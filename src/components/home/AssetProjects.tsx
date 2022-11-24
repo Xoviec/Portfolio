@@ -27,71 +27,24 @@ export const AssetProjects = () =>{
 
     return(
 
-        <Swiper
 
-        breakpoints={{
-            // when window width is >= 640px
-            300: {
-                width: 300,
-                slidesPerView: 1,
-              },
-            800: {
-              width: 800,
-              slidesPerView: 2,
-            },
-            // when window width is >= 768px
-            1146: {
-              width: 1146,
-              slidesPerView: 3,
-            },
-          }}
+            <div className=" flex flex-wrap gap-y-10 gap-x-44 flex-row justify-center overflow-x-auto p-5  asset-cards">
+                    <AssetProject link="https://www.canva.com/design/DAFOTP4uJMQ/1k4-FSFnNZ9_PvoEE61d6Q/edit" name="Disord bot" description="Bot that helps users with signing up to white list" build1={jsIcon} ></AssetProject>
 
-        spaceBetween={10}
-        // ebeslidesPerView={3}
-        modules={[Autoplay, Navigation]}
-        freeMode={true}
-        autoplay={{
-            delay: 300999,
-            pauseOnMouseEnter:true,
-            disableOnInteraction: false
-        }}
-        navigation={true}
-    
-        className='bg-[#2a476e9e] h-[500px] max-w-[1200px] flex items-center justify-center rounded-lg  p-5 mt-10'
-        >    
-
-            <div className="z-0 flex flex-row overflow-x-auto p-5 scroll-smooth snap-x snap-mandatory asset-cards">
-                <SwiperSlide className="flex items-center justify-center">
-                    <AssetProject link="https://www.canva.com/design/DAFOTP4uJMQ/1k4-FSFnNZ9_PvoEE61d6Q/edit" date="3.11.2020" name="Disord bot" description="Bot that helps users with signing up to white list" build1={jsIcon} ></AssetProject>
-                </SwiperSlide>
-
-                <SwiperSlide className="flex items-center justify-center">
-                    <AssetProject date="20.10.2021" name="Roulette" description="Simple roulette with beting function" build1={htmlIcon} build2={cssIcon} build3={jsIcon}></AssetProject>
-                </SwiperSlide>
-                <SwiperSlide className="flex items-center justify-center">
-                    <AssetProject date="3.03.2022" name="Roulette v2" description="Same roulette but rewritten with Typescript" build1={htmlIcon} build2={cssIcon} build3={tsIcon}></AssetProject>
-                </SwiperSlide>
+                    <AssetProject name="Roulette" description="Simple roulette with beting function" build1={htmlIcon} build2={cssIcon} build3={jsIcon}></AssetProject>
+                    <AssetProject name="Roulette v2" description="Same roulette but rewritten with Typescript" build1={htmlIcon} build2={cssIcon} build3={tsIcon}></AssetProject>
 
  
-                <SwiperSlide className="flex items-center justify-center">
-                    <AssetProject date="2.08.2022" name="Real time currency asset" description="SwiperJs with Apex Charts asset which shows actuall currency" build1={reactIcon} build2={tailwindIcon} build3={prismaIcon} build4={tRPCIcon} build5={planetScaleIcon}></AssetProject>
-                </SwiperSlide>
-                <SwiperSlide className="flex items-center justify-center">
-                    <AssetProject date="9.10.2022" name="Local events app" description="App which shows events nearby, created during the Hackathon in 24H" build1={reactIcon} build2={tailwindIcon} build3={prismaIcon} build4={tRPCIcon} build5={planetScaleIcon}></AssetProject>
+                    {/* <AssetProject name="Real time currency asset" description="SwiperJs with Apex Charts asset which shows actuall currency" build1={reactIcon} build2={tailwindIcon} build3={prismaIcon} build4={tRPCIcon} build5={planetScaleIcon}></AssetProject> */}
+                    <AssetProject name="Local events app" description="App which shows events nearby, created during the Hackathon in 24H" build1={reactIcon} build2={tailwindIcon} build3={prismaIcon} build4={tRPCIcon} build5={planetScaleIcon}></AssetProject>
 
-                </SwiperSlide>
-                <SwiperSlide className="flex items-center justify-center">
-                    <AssetProject date="14.09.2022" name="Facebook landing page" description="Lorem ipsum dolet sanktum" build1={reactIcon} build2={tailwindIcon}></AssetProject>
-                </SwiperSlide>
-                <SwiperSlide className="flex items-center justify-center">
-                    <AssetProject date="1.09.2020" name="Notes app" description="Features: Add note, delete note, find note, save to local storage" build1={reactIcon} build2={tailwindIcon} ></AssetProject>
+                    <AssetProject name="Facebook landing page" description="Facebook landing page copy" build1={reactIcon} build2={tailwindIcon}></AssetProject>
+                    <AssetProject name="Notes app" description="Features: Add note, delete note, find note, save to local storage" build1={reactIcon} build2={tailwindIcon} ></AssetProject>
 
-                </SwiperSlide>
                 
 
             </div>
 
-        </Swiper>
     )
 
 
