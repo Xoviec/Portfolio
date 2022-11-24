@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      transitionTimingFunction: {
+        'in-back': 'cubic-bezier(0.68, -0.55, 0.27, 1.55)',
+        'out-expo': 'cubic-bezier(0.19, 1, 0.22, 1)',
+      },
       animation:{
         'show-up': 'show-up 2s ease-in'
       },
