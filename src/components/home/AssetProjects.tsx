@@ -31,7 +31,7 @@ export const AssetProjects = () =>{
             <div className=" flex flex-wrap gap-y-10 gap-x-44 flex-row justify-center overflow-x-auto p-5  asset-cards">
                     <AssetProject link="https://www.canva.com/design/DAFOTP4uJMQ/1k4-FSFnNZ9_PvoEE61d6Q/edit" name="Disord bot" description="Bot that helps users with signing up to white list" build1={jsIcon} ></AssetProject>
 
-                    <AssetProject name="Roulette" description="Simple roulette with beting function" build1={htmlIcon} build2={cssIcon} build3={jsIcon}></AssetProject>
+                    <AssetProject link="https://google.com" name="Roulette" description="Simple roulette with beting function" build1={htmlIcon} build2={cssIcon} build3={jsIcon}></AssetProject>
                     <AssetProject name="Roulette v2" description="Same roulette but rewritten with Typescript" build1={htmlIcon} build2={cssIcon} build3={tsIcon}></AssetProject>
 
  
